@@ -33,16 +33,25 @@
      }
  });
  jQuery('.setting-contant').hide();
- 
+
+// Function to get the correct CSS path based on current page location
+function getCssPath(cssFile) {
+    // Check if we're in a subdirectory (pages folder)
+    if (window.location.pathname.includes('/pages/')) {
+        return "../assets/css/" + cssFile;
+    } else {
+        return "assets/css/" + cssFile;
+    }
+}
  
 $(".dark-button").click(function() {
     var $this = $(this);
     if($this.hasClass('light-button')){
         $this.text('Light');  
-        $("#change-link").attr("href", "../assets/css/style.css");       
+        $("#change-link").attr("href", getCssPath("style.css"));       
     } else {
         $this.text('Dark');
-        $("#change-link").attr("href", "../assets/css/dark.css");
+        $("#change-link").attr("href", getCssPath("dark.css"));
     }
  
 });
@@ -62,10 +71,10 @@ $(".dark-button-1").click(function() {
     var $this = $(this);
     if($this.hasClass('light-button-1')){
         $this.text('Light');  
-        $("#change-link").attr("href", "../assets/css/style-1.css");       
+        $("#change-link").attr("href", getCssPath("style-1.css"));       
     } else {
         $this.text('Dark');
-        $("#change-link").attr("href", "../assets/css/dark-1.css");
+        $("#change-link").attr("href", getCssPath("dark-1.css"));
     }
  
 });
@@ -85,10 +94,10 @@ $(".dark-button-2").click(function() {
     var $this = $(this);
     if($this.hasClass('light-button-2')){
         $this.text('Light');  
-        $("#change-link").attr("href", "../assets/css/style-2.css");       
+        $("#change-link").attr("href", getCssPath("style-2.css"));       
     } else {
         $this.text('Dark');
-        $("#change-link").attr("href", "../assets/css/dark-2.css");
+        $("#change-link").attr("href", getCssPath("dark-2.css"));
     }
  
 });

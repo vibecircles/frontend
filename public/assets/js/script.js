@@ -464,39 +464,49 @@ $(".search-box .icon-close").on("click", function() {
    19. Dark js 
  ==========================*/
 
+// Function to get the correct CSS path based on current page location
+function getCssPath(cssFile) {
+    // Check if we're in a subdirectory (pages folder)
+    if (window.location.pathname.includes('/pages/')) {
+        return "../assets/css/" + cssFile;
+    } else {
+        return "assets/css/" + cssFile;
+    }
+}
+
 $(document).ready(function() {
     $("#dark").click(function() {
         $(this).parent(".header-btn").find("#light").addClass("d-inline-block");
         $(this).parent(".header-btn").find("#dark").addClass("d-none");
-        $("#change-link").attr("href", "../assets/css/dark.css");
+        $("#change-link").attr("href", getCssPath("dark.css"));
     });
     $("#light").click(function() {
         $(this).parent(".header-btn").find("#light").removeClass("d-inline-block");
         $(this).parent(".header-btn").find("#dark").removeClass("d-none")
-        $("#change-link").attr("href", "../assets/css/style.css");
+        $("#change-link").attr("href", getCssPath("style.css"));
     });
 });	
 $(document).ready(function() {
     $("#dark-1").click(function() {
         $(this).parent(".header-btn").find("#light-1").addClass("d-inline-block");
         $(this).parent(".header-btn").find("#dark-1").addClass("d-none");
-        $("#change-link").attr("href", "../assets/css/dark-1.css");
+        $("#change-link").attr("href", getCssPath("dark-1.css"));
     });
     $("#light-1").click(function() {
         $(this).parent(".header-btn").find("#light-1").removeClass("d-inline-block");
         $(this).parent(".header-btn").find("#dark-1").removeClass("d-none")
-        $("#change-link").attr("href", "../assets/css/style-1.css");
+        $("#change-link").attr("href", getCssPath("style-1.css"));
     });
 });	
 $(document).ready(function() {
     $("#dark-2").click(function() {
         $(this).parent(".header-btn").find("#light-2").addClass("d-inline-block");
         $(this).parent(".header-btn").find("#dark-2").addClass("d-none");
-        $("#change-link").attr("href", "../assets/css/dark-2.css");
+        $("#change-link").attr("href", getCssPath("dark-2.css"));
     });
     $("#light-2").click(function() {
         $(this).parent(".header-btn").find("#light-2").removeClass("d-inline-block");
         $(this).parent(".header-btn").find("#dark-2").removeClass("d-none")
-        $("#change-link").attr("href", "../assets/css/style-2.css");
+        $("#change-link").attr("href", getCssPath("style-2.css"));
     });
 });
