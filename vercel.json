@@ -1,12 +1,6 @@
 {
   "version": 2,
   "name": "vibecircles-frontend",
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/api/(.*)",
